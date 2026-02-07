@@ -83,7 +83,7 @@ export function Hero() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.8, duration: 0.5 }}
-                        className="absolute -bottom-10 -left-10 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 max-w-xs z-20"
+                        className="absolute bottom-4 left-4 lg:bottom-0 lg:left-0 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 max-w-xs z-20"
                     >
                         <div className="bg-green-100 p-3 rounded-full text-green-600">
                             <MapPin size={24} />
