@@ -22,6 +22,11 @@ export function Footer() {
                     <Link to="/aup/vendor" className="hover:text-white transition-colors relative top-[1px]">
                         Acceptable Use Policy (Vendor)
                     </Link>
+
+                    <LegalDropdown title="Data Deletion">
+                        <Link to="/data-deletion/consumer" className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-600 text-left">Consumer App</Link>
+                        <Link to="/data-deletion/vendor" className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-600 text-left">Vendor App</Link>
+                    </LegalDropdown>
                 </div>
             </div>
         </footer>

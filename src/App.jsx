@@ -6,6 +6,7 @@ import { LegalLayout } from './components/layout/LegalLayout';
 import { PrivacyPolicy } from './components/legal/PrivacyPolicy';
 import { TermsOfService } from './components/legal/TermsOfService';
 import { AcceptableUsePolicy } from './components/legal/AcceptableUsePolicy';
+import { DataDeletion } from './components/legal/DataDeletion';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/privacy/:type" element={<PrivacyPolicy />} />
           <Route path="/terms/:type" element={<TermsOfService />} />
           <Route path="/aup/vendor" element={<AcceptableUsePolicy />} />
+          <Route path="/data-deletion/:type" element={<DataDeletion />} />
         </Route>
       </Routes>
     </Router>
