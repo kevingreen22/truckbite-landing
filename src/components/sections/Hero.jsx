@@ -34,15 +34,10 @@ export function Hero() {
                     </h1>
 
                     <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
-                        Track your favorite food trucks in real-time. See live locations, menus, and shorter wait times.
+                        Track your favorite food trucks in real-time. See live locations and get notified when your favorites go online.
                     </p>
 
                     <div className="flex flex-col gap-6 pt-4 items-start">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-semibold text-orange-600 border border-orange-100">
-                            <Star size={16} className="fill-orange-600" />
-                            #1 Food Truck Discovery App
-                        </div>
-
                         <Button className="flex items-center justify-center gap-2 group w-full sm:w-auto min-w-[200px] text-lg px-8 py-4"
                             onClick={() => document.getElementById('download').scrollIntoView({ behavior: 'smooth' })}
                         >
@@ -51,16 +46,7 @@ export function Hero() {
                         </Button>
                     </div>
 
-                    <div className="flex items-center gap-4 pt-8 pb-12 text-sm text-gray-500">
-                        <div className="flex -space-x-3">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className={`w-10 h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center overflow-hidden`}>
-                                    <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
-                                </div>
-                            ))}
-                        </div>
-                        <p className="font-medium">Joined by 10,000+ foodies</p>
-                    </div>
+                    <div className="pb-12" />
                 </motion.div>
 
                 {/* Hero Image */}

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local environment variables (Clerk keys)
+.env
+.env.local
+.env.*.local

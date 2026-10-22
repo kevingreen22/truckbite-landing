@@ -35,10 +35,11 @@ const features = [
     }
 ];
 
-export function Features() {
+export function Features({ ids }) {
+    const visible = ids ? features.filter((f) => ids.includes(f.id)) : features;
     return (
         <section id="features" className="bg-white overflow-hidden">
-            {features.map((feature, index) => (
+            {visible.map((feature, index) => (
                 <div
                     key={index}
                     id={feature.id}

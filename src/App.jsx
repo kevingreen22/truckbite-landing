@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ScrollToTop } from './components/utils/ScrollToTop';
 import { LandingPage } from './pages/LandingPage';
+import { VendorPage } from './pages/VendorPage';
 import { LegalLayout } from './components/layout/LegalLayout';
 import { PrivacyPolicy } from './components/legal/PrivacyPolicy';
 import { TermsOfService } from './components/legal/TermsOfService';
@@ -14,6 +15,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/vendors" element={<VendorPage />} />
 
         {/* Legal Routes */}
         <Route element={<LegalLayout />}>

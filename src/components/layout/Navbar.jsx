@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Truck } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Button } from '../ui/Button';
 import logoImage from '../../assets/images/app_icon.png';
 
-export function Navbar() {
+const NAV_LINKS = [
+    { label: 'For Eaters', to: '/' },
+    { label: 'For Trucks', to: '/vendors' },
+];
+
+export function Navbar({ ctaLabel = 'Get the App', ctaTarget = 'download' }) {
+    const { pathname } = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
     const { scrollY } = useScroll();
 
@@ -21,33 +27,32 @@ export function Navbar() {
             transition={{ duration: 0.5 }}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <a href="#" className="flex items-center gap-3 group">
+                <Link to="/" className="flex items-center gap-3 group">
                     {/* Logo Placeholder - will be replaced with real logo */}
                     <img src={logoImage} alt="TruckBite Logo" className="h-10 w-auto group-hover:scale-105 transition-transform" />
                     <span className="text-2xl font-bold tracking-tight text-gray-900">
                         Truck<span className="text-orange-600">Bite</span>
                     </span>
-                </a>
+                </Link>
 
                 <div className="hidden md:flex items-center gap-8">
-                    {['For Eaters', 'For Trucks'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase().replace(' ', '-')}`}
-                            className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-orange-600' : 'text-gray-800 lg:text-white/90 lg:hover:text-white hover:text-orange-600'
-                                }`}
+                    {NAV_LINKS.map((item) => (
+                        <Link
+                            key={item.to}
+                            to={item.to}
+                            className={`font-medium transition-colors hover:text-orange-600 ${pathname === item.to ? 'text-orange-600' : 'text-gray-700'}`}
                         >
-                            {item}
-                        </a>
+                            {item.label}
+                        </Link>
                     ))}
                 </div>
 
                 <Button
                     variant={isScrolled ? 'primary' : 'secondary'}
                     className="hidden md:block shadow-none"
-                    onClick={() => document.getElementById('download').scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById(ctaTarget)?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                    Get the App
+                    {ctaLabel}
                 </Button>
             </div>
         </motion.nav>
