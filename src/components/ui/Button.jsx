@@ -8,6 +8,8 @@ export function Button({ children, className, variant = 'primary', ...props }) {
     const variants = {
         primary: "bg-orange-600 text-white hover:bg-orange-700 shadow-lg hover:shadow-orange-500/30",
         secondary: "bg-white text-orange-600 border-2 border-orange-100 hover:border-orange-200 hover:bg-orange-50",
+        vendor: "bg-vendor-600 text-white hover:bg-vendor-700 shadow-lg hover:shadow-vendor-600/30",
+        vendorSecondary: "bg-white text-vendor-600 border-2 border-vendor-100 hover:border-vendor-200 hover:bg-vendor-50",
         outline: "bg-transparent text-white border-2 border-white/30 hover:bg-white/10 backdrop-blur-sm",
     };
 

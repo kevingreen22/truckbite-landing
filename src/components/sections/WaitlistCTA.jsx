@@ -4,7 +4,7 @@ import { WaitlistForm } from '../ui/WaitlistForm';
 
 export function WaitlistCTA() {
     return (
-        <section id="join" className="py-24 bg-orange-600 text-white relative overflow-hidden">
+        <section id="join" className="py-24 bg-vendor-600 text-white relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -14,7 +14,7 @@ export function WaitlistCTA() {
                     className="space-y-4"
                 >
                     <h2 className="text-4xl lg:text-5xl font-bold">Be one of our first trucks.</h2>
-                    <p className="text-orange-100/90 text-lg max-w-md">
+                    <p className="text-vendor-100 text-lg max-w-md">
                         Join the waitlist and we'll email you the day TruckBite launches.
                     </p>
                 </motion.div>

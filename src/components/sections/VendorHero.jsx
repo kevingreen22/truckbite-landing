@@ -5,8 +5,8 @@ import { WaitlistForm } from '../ui/WaitlistForm';
 
 export function VendorHero() {
     return (
-        <section id="waitlist" className="relative overflow-hidden bg-orange-50 pt-40 pb-24">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-100/50 rounded-bl-[100px] -z-10" />
+        <section id="waitlist" className="relative overflow-hidden bg-vendor-50 pt-40 pb-24">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-vendor-100/60 rounded-bl-[100px] -z-10" />
 
             <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div
@@ -15,14 +15,14 @@ export function VendorHero() {
                     transition={{ duration: 0.8 }}
                     className="space-y-6"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-semibold text-orange-600 border border-orange-100">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-semibold text-vendor-600 border border-vendor-100">
                         <MapPin size={16} />
                         For food truck owners
                     </div>
 
                     <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1]">
                         Get your truck{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-yellow-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-vendor-600 to-vendor-accent">
                             found.
                         </span>
                     </h1>

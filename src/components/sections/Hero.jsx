@@ -39,9 +39,9 @@ export function Hero() {
 
                     <div className="flex flex-col gap-6 pt-4 items-start">
                         <Button className="flex items-center justify-center gap-2 group w-full sm:w-auto min-w-[200px] text-lg px-8 py-4"
-                            onClick={() => document.getElementById('download').scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })}
                         >
-                            Find Trucks
+                            Join the Waitlist
                             <MapPin size={20} className="group-hover:animate-bounce" />
                         </Button>
                     </div>
