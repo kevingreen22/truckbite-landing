@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { ClerkProvider } from '@clerk/react';
-import { CLERK_KEYS } from '../config/waitlist';
+import { CLERK_KEYS, claimClerkKey } from '../config/waitlist';
 import { Navbar } from '../components/layout/Navbar';
 import { VendorHero } from '../components/sections/VendorHero';
 import { Features } from '../components/sections/Features';
@@ -10,6 +10,7 @@ import { Footer } from '../components/layout/Footer';
 
 export function VendorPage() {
     const page = <VendorContent />;
+    if (CLERK_KEYS.vendor && !claimClerkKey(CLERK_KEYS.vendor)) return null;
     // Clerk is loaded only on this page, so the consumer page stays lightweight.
     return CLERK_KEYS.vendor
         ? <ClerkProvider publishableKey={CLERK_KEYS.vendor}>{page}</ClerkProvider>

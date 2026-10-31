@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/react';
-import { CLERK_KEYS } from '../config/waitlist';
+import { CLERK_KEYS, claimClerkKey } from '../config/waitlist';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/sections/Hero';
 import { Features } from '../components/sections/Features';
@@ -11,6 +11,7 @@ import { Footer } from '../components/layout/Footer';
 
 export function LandingPage() {
     const page = <LandingContent />;
+    if (CLERK_KEYS.consumer && !claimClerkKey(CLERK_KEYS.consumer)) return null;
     // Clerk (consumer waitlist application) is loaded only when its key is set.
     return CLERK_KEYS.consumer
         ? <ClerkProvider publishableKey={CLERK_KEYS.consumer}>{page}</ClerkProvider>
