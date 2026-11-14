@@ -1,0 +1,34 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ScrollToTop } from './components/utils/ScrollToTop';
+import { AnalyticsTracker } from './components/utils/AnalyticsTracker';
+import { LandingPage } from './pages/LandingPage';
+import { VendorPage } from './pages/VendorPage';
+import { LegalLayout } from './components/layout/LegalLayout';
+import { PrivacyPolicy } from './components/legal/PrivacyPolicy';
+import { TermsOfService } from './components/legal/TermsOfService';
+import { AcceptableUsePolicy } from './components/legal/AcceptableUsePolicy';
+import { DataDeletion } from './components/legal/DataDeletion';
+
+function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <AnalyticsTracker />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/vendors" element={<VendorPage />} />
+
+        {/* Legal Routes */}
+        <Route element={<LegalLayout />}>
+          <Route path="/privacy/:type" element={<PrivacyPolicy />} />
+          <Route path="/terms/:type" element={<TermsOfService />} />
+          <Route path="/aup/vendor" element={<AcceptableUsePolicy />} />
+          <Route path="/data-deletion/:type" element={<DataDeletion />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
