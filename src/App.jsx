@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AnalyticsPageTracker } from './analytics';
 import { ScrollToTop } from './components/utils/ScrollToTop';
 import { LandingPage } from './pages/LandingPage';
 import { VendorPage } from './pages/VendorPage';
@@ -12,6 +13,7 @@ import { DataDeletion } from './components/legal/DataDeletion';
 function App() {
   return (
     <Router>
+      <AnalyticsPageTracker />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
