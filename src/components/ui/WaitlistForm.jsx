@@ -4,6 +4,7 @@ import { CheckCircle2 } from 'lucide-react';
 import { useWaitlist } from '@clerk/react';
 import { Button } from './Button';
 import { CLERK_KEYS, WAITLIST_PERKS } from '../../config/waitlist';
+import { trackEvent } from '../../analytics';
 
 const COPY = {
     vendor: {
@@ -51,6 +52,7 @@ function ClerkWaitlistForm({ id, audience }) {
     const perk = WAITLIST_PERKS[audience];
     const { waitlist, errors, fetchStatus } = useWaitlist();
     const [submitError, setSubmitError] = React.useState('');
+    const trackedSignup = React.useRef(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -63,6 +65,11 @@ function ClerkWaitlistForm({ id, audience }) {
             const reason = error.longMessage || error.message;
             const code = error.code ? ` (${error.code})` : '';
             setSubmitError(reason ? `${reason}${code}` : 'Something went wrong. Please try again.');
+        } else if (!trackedSignup.current) {
+            trackedSignup.current = true;
+            trackEvent(audience === 'consumer' ? 'consumer_waitlist_signup' : 'vendor_waitlist_signup', {
+                method: 'clerk',
+            });
         }
     }
 
