@@ -4,6 +4,7 @@ import { CLERK_KEYS, claimClerkKey } from '../config/waitlist';
 import { Navbar } from '../components/layout/Navbar';
 import { VendorHero } from '../components/sections/VendorHero';
 import { Features } from '../components/sections/Features';
+import { MarketingKit } from '../components/sections/MarketingKit';
 import { WaitlistCTA } from '../components/sections/WaitlistCTA';
 import { ScrollProgressTruck } from '../components/ui/ScrollProgressTruck';
 import { Footer } from '../components/layout/Footer';
@@ -31,6 +32,7 @@ function VendorContent() {
             <main>
                 <VendorHero />
                 <Features ids={['for-trucks']} />
+                <MarketingKit />
                 <WaitlistCTA />
             </main>
             <Footer />
